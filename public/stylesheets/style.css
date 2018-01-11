@@ -1,0 +1,29 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.wrapper {
+    display: flex;
+}
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    margin: 50px 0 0 0;
+    background-color: #222;
+    padding: 10px;
+    height: 100vh;
+}
+
+.dishMenu {
+    padding: 10px;
+}
+
+.content {
+  margin: 50px 0 0 250px;
+  padding: 50px;
+}
