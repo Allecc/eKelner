@@ -27,17 +27,24 @@ router.get('/', function(req, res, next) {
 
 router.get('/pizza', function(req, res){
   Food.findAll({where: { typ: "Pizza"}}).then(pizza => {
-  // projects will be an array of all Project instances
     res.json(pizza);
   });
 });
 
 router.get('/mieso', function(req, res){
   Food.findAll({where: { typ: "Mieso"}}).then(mieso => {
-  // projects will be an array of all Project instances
     res.json(mieso);
   });
 });
+
+router.get('/produkty/:id', function(req, res){
+  let id = req.params.id;
+  Food.findOne({where: { id: id}}).then(prod => {
+  console.log(prod);
+    res.json(prod);
+  });
+});
+
 router.get('/wypelnij_baze', function(req, res){
 
 sequelize.sync()
