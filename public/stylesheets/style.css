@@ -27,3 +27,85 @@ a {
   margin: 50px 0 0 250px;
   padding: 50px;
 }
+
+.productContainer {
+  /*padding: 0!important;*/
+  margin-bottom: 25px;
+  float: left;
+}
+
+.productContainer img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.productContainer a {
+  display: block;
+}
+
+#product a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes overlyOpacity{
+  from {opacity: 0;}
+  to {opacity: 0.8;}
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  opacity: 0.8;
+  animation-name: overlyOpacity;
+  animation-duration: 0.5s;
+  background-color: #222;
+}
+
+.textOverly {
+  width: 85%;
+  height: 100%;
+  position: absolute;
+  margin-top: 10px;
+  top: 30%;
+  left: 30%;
+  transform: translate(-25%, -25%);
+  -ms-transform: translate(-25%, -25%);
+}
+
+.textOverly span, .textOverly a {
+  color: white;
+}
+
+.textOverly h2 {
+  color: #c0c0c0;
+}
+
+.product-price {
+  margin: 0 0 10% 0;
+  position: absolute;
+  float: left;
+  width: 100%;
+  bottom: 10%;
+  color: #c0c0c0;
+  font-size: 18px;
+}
+
+a.products-links {
+  text-decoration: none;
+  color: #c0c0c0;
+}
+
+a.products-links:hover {
+  text-decoration: none;
+  color: #414141
+}
+
+.btnZamow {
+  float: right;
+}
