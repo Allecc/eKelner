@@ -233,7 +233,7 @@ router.get('/wypelnij_baze', function (req, res) {
                 cena: '25',
                 skladniki: 'Halibut, masło, cytryna, oregano',
                 opis: 'Dobry na romantyczną kolację',
-                zdjecie: '/images/ryby/pieczony_halibut_00.jpg.jpeg'
+                zdjecie: '/images/ryby/pieczony_halibut_00.jpg'
             });
             Food.create({
                 nazwa: 'Pstrąg pieczony',
