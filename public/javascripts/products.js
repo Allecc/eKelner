@@ -70,7 +70,6 @@ function napoje(){
 
 };
 
-
 function surowki(){
     $.get( "/surowki", function( data ) {
         console.log("SURÓWKI!");
@@ -83,6 +82,7 @@ function surowki(){
     });
 
 };
+
 
 
 function ryby(){

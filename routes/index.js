@@ -56,25 +56,18 @@ router.get('/napoje', function (req, res) {
     });
 });
 
-router.get('/napoje', function (req, res) {
+router.get('/surowki', function (req, res) {
     Food.findAll({where: {typ: "Surowki"}}).then(surowki => {
         res.json(surowki);
     });
 });
+
 
 router.get('/ryby', function (req, res) {
     Food.findAll({where: {typ: "ryby"}}).then(ryby => {
         res.json(ryby);
     });
 });
-
-
-
-
-
-
-
-
 
 
 router.get('/produkty/:id', function (req, res) {
@@ -84,6 +77,7 @@ router.get('/produkty/:id', function (req, res) {
         res.json(prod);
     });
 });
+
 
 router.get('/wypelnij_baze', function (req, res) {
 
@@ -113,7 +107,6 @@ router.get('/wypelnij_baze', function (req, res) {
                 opis: 'labore export esse enim minim multos tamen minim sint culpa',
                 zdjecie: '/images/mieso_stek.jpeg'
             });
-
 
 
             Food.create({
@@ -148,7 +141,6 @@ router.get('/wypelnij_baze', function (req, res) {
                 opis: 'Zabawna i pożywna, dla maluchów',
                 zdjecie: '/images/przystawki/mysia-salatka-video.jpg'
             });
-
 
 
             Food.create({
@@ -186,7 +178,6 @@ router.get('/wypelnij_baze', function (req, res) {
                 opis: 'Klasyczne danie jak u Twojej mamy',
                 zdjecie: '/images/zupy/zupa_ogorkowa_00.jpg'
             });
-
 
 
             Food.create({
