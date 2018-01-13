@@ -38,6 +38,45 @@ router.get('/mieso', function (req, res) {
     });
 });
 
+router.get('/przystawki', function (req, res) {
+    Food.findAll({where: {typ: "Przystawki"}}).then(przystawki => {
+        res.json(przystawki);
+    });
+});
+
+router.get('/zupy', function (req, res) {
+    Food.findAll({where: {typ: "Zupy"}}).then(zupy => {
+        res.json(zupy);
+    });
+});
+
+router.get('/napoje', function (req, res) {
+    Food.findAll({where: {typ: "Napoje"}}).then(napoje => {
+        res.json(napoje);
+    });
+});
+
+router.get('/napoje', function (req, res) {
+    Food.findAll({where: {typ: "Surowki"}}).then(surowki => {
+        res.json(surowki);
+    });
+});
+
+router.get('/ryby', function (req, res) {
+    Food.findAll({where: {typ: "ryby"}}).then(ryby => {
+        res.json(ryby);
+    });
+});
+
+
+
+
+
+
+
+
+
+
 router.get('/produkty/:id', function (req, res) {
     let id = req.params.id;
     Food.findOne({where: {id: id}}).then(prod => {
