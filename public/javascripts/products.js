@@ -117,15 +117,33 @@ function zamowienie(id, cena){
   $("#zamowienie").show();
   $("#lista").html("");
 
-  zamowione.push(id);
+  if(zamowione.length == 0){
+    zamowione.push({id: id, ilosc: 1});
+  } else {
+    let znalezione = 0;
+    for(let i = 0; i < zamowione.length; i++){
+      if(zamowione[i].id == id){
+        zamowione[i] = {
+          id: id,
+          ilosc: zamowione[i].ilosc +1
+        };
+        znalezione = 1;
+        break;
+      }
+    }
+
+    if(znalezione == 0){
+      zamowione.push({id: id, ilosc: 1});
+    }
+  }
+
   suma += parseInt(cena);
   for(let i = 0; i < zamowione.length; i++){
-    let helper = 0;
-    $.get("/produkty/" + zamowione[i], function(data) {
-      let products = '<div class="col-md-1 productContainer"><img src="' + data.zdjecie + '" alt="' + data.nazwa + '"/></div>';
+    $.get("/produkty/" + zamowione[i].id, function(data) {
+      let products = '<div class="col-md-1 productContainer"><img src="' + data.zdjecie + '" alt="' + data.nazwa + '"/><span> ' + data.nazwa + ' x ' + zamowione[i].ilosc + '</span></div>';
       $("#lista").append(products);
     });
   }
-  console.log(suma);
-  $("#lista").append("<h1>" + suma + "</h1>");
+  
+  $("#lista").append("<h1> Cena: " + suma + "</h1>");
 }

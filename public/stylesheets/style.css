@@ -118,4 +118,11 @@ a.products-links:hover {
     background-color: #222;
     min-height: 200px;
     max-height: 250px;
+    color: white;
+}
+
+#zamowione #kuchnia {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
