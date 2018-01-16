@@ -121,8 +121,8 @@ a.products-links:hover {
     color: white;
 }
 
-#zamowione #kuchnia {
-  position: absolute;
+#zamowienie #kuchnia {
+  position: fixed;
   right: 10px;
   bottom: 10px;
 }
