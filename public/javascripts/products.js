@@ -150,7 +150,7 @@ function zamowienie(id, cena){
 
 function wyslij(){
   console.log(zamowione);
-  $(".btnZamow").removeClass("btn-default").addClass("btn-danger disabled");
+  $("button").removeClass("btn-default").addClass("btn-danger disabled");
   $("#zamowienie").html("<h1> Twoje zamowienie zostalo wyslane! </h1>");
   setTimeout(function(){
     $("#zamowienie").append('<button class="btn btn-default">Zamów więcej</button>');
