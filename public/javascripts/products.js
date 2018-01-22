@@ -12,7 +12,7 @@ function pizza(){
     $.get( "/pizza", function( data ) {
       $('#data').html("");
       for(var v = 0; v < data.length; v++){
-        let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+          let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
         $('#data').append(products);
       }
@@ -26,7 +26,7 @@ function miesa(){
       console.log("MIESO!");
       $('#data').html("");
       for(var v = 0; v < data.length; v++){
-        let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+          let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
         $('#data').append(products);
       }
@@ -39,7 +39,7 @@ function przystawki(){
         console.log("PRZYSTAWKI!");
         $('#data').html("");
         for(var v = 0; v < data.length; v++){
-            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
             $('#data').append(products);
         }
@@ -53,7 +53,7 @@ function zupy(){
         console.log("ZUPY!");
         $('#data').html("");
         for(var v = 0; v < data.length; v++){
-            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
             $('#data').append(products);
         }
@@ -67,7 +67,7 @@ function napoje(){
         console.log("NAPOJE!");
         $('#data').html("");
         for(var v = 0; v < data.length; v++){
-            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
             $('#data').append(products);
         }
@@ -80,7 +80,7 @@ function surowki(){
         console.log("SURÓWKI!");
         $('#data').html("");
         for(var v = 0; v < data.length; v++){
-            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
             $('#data').append(products);
         }
@@ -95,13 +95,23 @@ function ryby(){
         console.log("RYBY!");
         $('#data').html("");
         for(var v = 0; v < data.length; v++){
-            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a href="">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
+            let products = '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 productContainer"><a><img src="' + data[v].zdjecie + '" alt="' + data[v].nazwa + '"/><div class="overlay"><div class="textOverly"><h2>' + data[v].nazwa + '</h2><span class="hidden-md hidden-sm hidden-xs">' + data[v].opis + '</span> <a data-toggle="modal" href="#productModal" onclick="wiecej( ' + data[v].id + ')">Więcej...</a><div class="product-price"><span class="col-md-6 products-links"><i aria-hidden="true" class="fa fa-shoppicart fa-lg"></i> Cena: ' + data[v].cena + ' zł</span><button class="btn btn-default btnZamow" onclick="zamowienie(' + data[v].id +  ' , ' + data[v].cena + ')">Zamów</button></div></div></div></a></div>';
 
             $('#data').append(products);
         }
     });
 
 };
+
+function wiecej(id) {
+  $.get("/produkty/"+id, function(data){
+    $("#productHeader").html(data.nazwa);
+    $("#productBody").html('<div class="col-md-6"><p> ' + data.opis + '</p><p style="margin-top: 40px;"><strong> Składniki: ' + data.skladniki + '</strong></p></div><img class="col-md-6" src="' + data.zdjecie + '" alt="' + data.nazwa + '"/>');
+    $("#productBody").addClass("modal-body").css("min-height", "400px");
+    $("#productFooter").html('<h3 class="col-md-12"> Cena: '+ data.cena + '</h3><button type="button" class="btn btn-default modalButton" data-dismiss="modal">Zamknij</button>');
+    $("#productFooter").addClass("modal-footer");
+  });
+}
 
 function status(){
   switch (statusInfo) {
@@ -175,7 +185,7 @@ function wyslij(){
   $("#zamowienie").html("<h1> Twoje zamowienie zostalo wyslane! </h1>");
   setTimeout(function(){
     statusInfo = 2;
-    $("#zamowienie").append('<button onclick="wiencej()" class="btn btn-default">Zamów więcej</button>');
+    $("#zamowienie").append('<button onclick="wincyj()" class="btn btn-default">Zamów więcej</button>');
   }, 3000);
   setTimeout(function(){
     statusInfo = 3;
@@ -184,7 +194,7 @@ function wyslij(){
 }
 
 var caleZamowienie = new Array();
-function wiencej(){
+function wincyj(){
   caleZamowienie.push(zamowione);
   zamowione = new Array();
   $("button").removeClass("btn-danger disabled").addClass("btn-default");
