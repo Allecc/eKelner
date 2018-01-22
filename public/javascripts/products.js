@@ -1,3 +1,8 @@
+
+var zamowione = new Array();
+var suma = 0;
+var statusInfo = 0;
+
 $(function(){
   $("#zamowienie").hide();
   pizza();
@@ -98,21 +103,35 @@ function ryby(){
 
 };
 
+function status(){
+  switch (statusInfo) {
+    case 0:
+      $('#statusBody').html("<h3> Proszę złożyć zamówienie. </h3>");
+      break;
+    case 1:
+      $('#statusBody').html("<h3> Zamówienie w przygotowaniu! </h3>");
+      break;
+    case 2:
+      $('#statusBody').html("<h3> Zamówienie w drodze! </h3>");
+      break;
+    case 3:
+      $('#statusBody').html("<h3> Zamówienie dostarczono! Do zapłaty: " + suma + " zł </h3><button onclick=kelner() class='btn btn-default'>Wezwij kelnera</button>");
+      break;
+    case 4:
+      $('#statusBody').html("<h3> Kelner w drodze! </h3>");
+      break;
+    default: $("#statusBody").html("informacje o statusie zamówenia");
+  }
+}
 
+function kelner(){
+  alert("Kelner w drodze!");
+  $("button").removeClass("btn-default").addClass("btn-danger disabled");
+  $(".modalButton").removeClass("btn-danger disabled").addClass("btn-default");
+  $("#zamowienie").html("<h1> Wezwano kelnera w celu zapłaty! </h1>");
+  statusInfo = 4;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-var zamowione = new Array();
-var suma = 0;
 function zamowienie(id, cena){
   $("#zamowienie").show();
   $("#lista").html("");
@@ -150,9 +169,24 @@ function zamowienie(id, cena){
 
 function wyslij(){
   console.log(zamowione);
+  statusInfo = 1;
   $("button").removeClass("btn-default").addClass("btn-danger disabled");
+  $(".modalButton").removeClass("btn-danger disabled").addClass("btn-default");
   $("#zamowienie").html("<h1> Twoje zamowienie zostalo wyslane! </h1>");
   setTimeout(function(){
-    $("#zamowienie").append('<button class="btn btn-default">Zamów więcej</button>');
+    statusInfo = 2;
+    $("#zamowienie").append('<button onclick="wiencej()" class="btn btn-default">Zamów więcej</button>');
   }, 3000);
+  setTimeout(function(){
+    statusInfo = 3;
+    alert("Zamówienie dostarczono!")
+  }, 5000);
+}
+
+var caleZamowienie = new Array();
+function wiencej(){
+  caleZamowienie.push(zamowione);
+  zamowione = new Array();
+  $("button").removeClass("btn-danger disabled").addClass("btn-default");
+  $("#zamowienie").html('<div id="lista" class="col-md-12"></div><button id="kuchnia" class="btn btn-default" onclick="wyslij()"> Wyślij do kuchni </button>');
 }
