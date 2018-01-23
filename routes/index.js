@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Sequelize = require('sequelize');
-const sequelize = new Sequelize('admin_food', 'admin_food', 'TvO1ItvSs3', {
-    host: 'allecx.nazwa.pl',
+const sequelize = new Sequelize('m5643_kelner', 'm5643_kelner', 'TvO1ItvSs3', {
+    host: 'mysql.ct8.pl',
     dialect: 'mysql'
 });
 
